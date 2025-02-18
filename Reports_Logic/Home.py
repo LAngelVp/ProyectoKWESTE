@@ -38,10 +38,6 @@ class PrincipalWindow(QMainWindow):
         self.ui.btn_btn_kweste.clicked.connect(self.abrirkweste)
         self.ui.btc_btc_cerrar.clicked.connect(self.cerrar)
         self.ui.btc_btc_minimizar.clicked.connect(self.minimizar)
-        
-        self.ui.btn_btn_kwkrei.hide()
-        self.ui.btn_btn_kwrb.hide()
-        self.ui.btn_btn_kwsonora.hide()
 
         if not os.path.exists(Variables().help_directory):
             os.makedirs(Variables().help_directory, exist_ok=True)

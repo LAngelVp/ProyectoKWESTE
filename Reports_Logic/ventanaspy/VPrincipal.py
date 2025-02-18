@@ -13,23 +13,23 @@ class Ui_VPrincipal(object):
     def setupUi(self, VPrincipal):
         VPrincipal.setObjectName("VPrincipal")
         VPrincipal.setEnabled(True)
-        VPrincipal.resize(320, 450)
+        VPrincipal.resize(320, 270)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(VPrincipal.sizePolicy().hasHeightForWidth())
         VPrincipal.setSizePolicy(sizePolicy)
-        VPrincipal.setMinimumSize(QtCore.QSize(320, 450))
-        VPrincipal.setMaximumSize(QtCore.QSize(320, 450))
+        VPrincipal.setMinimumSize(QtCore.QSize(320, 270))
+        VPrincipal.setMaximumSize(QtCore.QSize(320, 270))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("c:\\Users\\Angel Rodriguez\\LUIS_ANGEL_VALLEJO\\ProyectoKWESTE\\Front\\ventanasui\\Source/KWE.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         VPrincipal.setWindowIcon(icon)
         VPrincipal.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         VPrincipal.setAutoFillBackground(False)
         VPrincipal.setStyleSheet("#VPrincipal{\n"
-"min-height:450px;\n"
+"min-height:270px;\n"
 "min-width: 320px;\n"
-"max-height: 450px;\n"
+"max-height: 270px;\n"
 "max-width: 320px;\n"
 "}\n"
 "#panel_principal{\n"
@@ -47,17 +47,17 @@ class Ui_VPrincipal(object):
 "    color: rgb(0, 0, 0);\n"
 "    border-radius:4px;\n"
 "}\n"
-"[objectName^=\"btn_btn\"]{\n"
+"[objectName*=\"btn_btn\"]{\n"
 "background-color: rgb(64, 150, 216);\n"
 "    color: rgb(0, 0, 0);\n"
 "    color: rgb(0, 0, 0);\n"
 "    border-radius:8px;\n"
 "    font-size: 15px;\n"
 "    font-weight: bold;\n"
-"    max-height: 35px;\n"
-"    max-width: 280px;\n"
+"    min-height: 30px;\n"
+"    max-width: 250px;\n"
 "}\n"
-"[objectName^=\"btn_btn\"]:hover{\n"
+"[objectName*=\"btn_btn\"]:hover{\n"
 "background-color: rgb(69, 163, 235);\n"
 "    color: rgb(0, 0, 0);\n"
 "}\n"
@@ -68,11 +68,6 @@ class Ui_VPrincipal(object):
 "#panel_img_logo{\n"
 "min-height: 120px;\n"
 "    max-height: 120px;\n"
-"}\n"
-"#panel_btn_sucursales{\n"
-"margin-top:10px;\n"
-"min-height: 200px;\n"
-"    max-height: 300px;\n"
 "}\n"
 "#imgPrincipalMenu{\n"
 "    margin-left: 60px;\n"
@@ -108,8 +103,8 @@ class Ui_VPrincipal(object):
         self.horizontalLayout.addWidget(self.imgPrincipalMenu)
         self.gridLayout_2.addWidget(self.panel_img_logo, 1, 0, 1, 1)
         self.panel_btn_sucursales = QtWidgets.QWidget(parent=self.panel_principal)
-        self.panel_btn_sucursales.setMinimumSize(QtCore.QSize(0, 210))
-        self.panel_btn_sucursales.setMaximumSize(QtCore.QSize(16777215, 310))
+        self.panel_btn_sucursales.setMinimumSize(QtCore.QSize(0, 0))
+        self.panel_btn_sucursales.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.panel_btn_sucursales.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         self.panel_btn_sucursales.setObjectName("panel_btn_sucursales")
         self.gridLayout_3 = QtWidgets.QGridLayout(self.panel_btn_sucursales)
@@ -118,6 +113,8 @@ class Ui_VPrincipal(object):
         self.gridLayout_3.setSpacing(0)
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.btn_btn_kweste = QtWidgets.QPushButton(parent=self.panel_btn_sucursales)
+        self.btn_btn_kweste.setMinimumSize(QtCore.QSize(0, 30))
+        self.btn_btn_kweste.setMaximumSize(QtCore.QSize(250, 16777215))
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setBold(True)
@@ -126,38 +123,7 @@ class Ui_VPrincipal(object):
         self.btn_btn_kweste.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.btn_btn_kweste.setStyleSheet("")
         self.btn_btn_kweste.setObjectName("btn_btn_kweste")
-        self.gridLayout_3.addWidget(self.btn_btn_kweste, 1, 0, 1, 1)
-        self.btn_btn_kwsonora = QtWidgets.QPushButton(parent=self.panel_btn_sucursales)
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_btn_kwsonora.setFont(font)
-        self.btn_btn_kwsonora.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.btn_btn_kwsonora.setStyleSheet("")
-        self.btn_btn_kwsonora.setObjectName("btn_btn_kwsonora")
-        self.gridLayout_3.addWidget(self.btn_btn_kwsonora, 3, 0, 1, 1)
-        self.btn_btn_kwkrei = QtWidgets.QPushButton(parent=self.panel_btn_sucursales)
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_btn_kwkrei.setFont(font)
-        self.btn_btn_kwkrei.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.btn_btn_kwkrei.setStyleSheet("")
-        self.btn_btn_kwkrei.setObjectName("btn_btn_kwkrei")
-        self.gridLayout_3.addWidget(self.btn_btn_kwkrei, 2, 0, 1, 1)
-        self.btn_btn_kwrb = QtWidgets.QPushButton(parent=self.panel_btn_sucursales)
-        self.btn_btn_kwrb.setMaximumSize(QtCore.QSize(280, 35))
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        font.setBold(True)
-        font.setWeight(75)
-        self.btn_btn_kwrb.setFont(font)
-        self.btn_btn_kwrb.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.btn_btn_kwrb.setStyleSheet("")
-        self.btn_btn_kwrb.setObjectName("btn_btn_kwrb")
-        self.gridLayout_3.addWidget(self.btn_btn_kwrb, 0, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.btn_btn_kweste, 0, 0, 1, 1)
         self.gridLayout_2.addWidget(self.panel_btn_sucursales, 2, 0, 1, 1)
         self.panel_encabezado = QtWidgets.QWidget(parent=self.panel_principal)
         self.panel_encabezado.setObjectName("panel_encabezado")
@@ -188,14 +154,10 @@ class Ui_VPrincipal(object):
         VPrincipal.setCentralWidget(self.panel_principal)
 
         self.retranslateUi(VPrincipal)
-        self.btn_btn_kwrb.clicked.connect(VPrincipal.show) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(VPrincipal)
 
     def retranslateUi(self, VPrincipal):
         _translate = QtCore.QCoreApplication.translate
         VPrincipal.setWindowTitle(_translate("VPrincipal", "CONCESIONARIOS"))
         self.btn_btn_kweste.setText(_translate("VPrincipal", "KENWORTH DEL ESTE"))
-        self.btn_btn_kwsonora.setText(_translate("VPrincipal", "KENWORTH SONORA"))
-        self.btn_btn_kwkrei.setText(_translate("VPrincipal", "KENWORTH KREI"))
-        self.btn_btn_kwrb.setText(_translate("VPrincipal", "KENWORTH RIO BRAVO"))
 from .icono import *

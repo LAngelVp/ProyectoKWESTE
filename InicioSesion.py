@@ -57,7 +57,7 @@ class InicioSesion(QWidget):
         else:
             pass
 
-        self.excepsion()
+        # self.excepsion()
 
     def cerrar(self):
         self.close()
