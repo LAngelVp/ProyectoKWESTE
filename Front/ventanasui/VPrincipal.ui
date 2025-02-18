@@ -156,6 +156,9 @@ border-radius:8px;
          <property name="text">
           <string/>
          </property>
+         <property name="pixmap">
+          <pixmap resource="../../icono.qrc">:/Source/logo_analytics.png</pixmap>
+         </property>
          <property name="scaledContents">
           <bool>true</bool>
          </property>
@@ -378,7 +381,9 @@ border-radius:8px;
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../icono.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>btn_btn_kwrb</sender>

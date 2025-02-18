@@ -198,4 +198,3 @@ class Ui_VPrincipal(object):
         self.btn_btn_kwsonora.setText(_translate("VPrincipal", "KENWORTH SONORA"))
         self.btn_btn_kwkrei.setText(_translate("VPrincipal", "KENWORTH KREI"))
         self.btn_btn_kwrb.setText(_translate("VPrincipal", "KENWORTH RIO BRAVO"))
-from .icono import *

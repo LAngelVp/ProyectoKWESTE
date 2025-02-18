@@ -5,7 +5,7 @@
 import sys
 import os
 from datetime import datetime
-from  .globalModulesShare.resources import *
+# from  .globalModulesShare.resources import *
 from  .globalModulesShare.icono import *
 from PyQt6 import  *
 from PyQt6.QtCore import Qt, QPointF
@@ -29,7 +29,7 @@ class PrincipalWindow(QMainWindow):
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
         self.setWindowTitle("Menu de Sucursales")
         # self.ui.centralwidget.setStyleSheet("background-color:rgb(255, 255, 255);")
-        self.ui.imgPrincipalMenu.setPixmap(QPixmap(":/Source/DevRous2.png"))
+        self.ui.imgPrincipalMenu.setPixmap(QPixmap(":/Source/logo_analytics.png"))
         self.setWindowIcon(QIcon(":/Source/LOGO_KREI_3.ico"))
         self.ui.btc_btc_cerrar.setIcon(QIcon(":Source/Icon_Close.png"))
         self.ui.btc_btc_minimizar.setIcon(QIcon(":Source/Icon_Minimize.png")) 
@@ -38,6 +38,10 @@ class PrincipalWindow(QMainWindow):
         self.ui.btn_btn_kweste.clicked.connect(self.abrirkweste)
         self.ui.btc_btc_cerrar.clicked.connect(self.cerrar)
         self.ui.btc_btc_minimizar.clicked.connect(self.minimizar)
+        
+        self.ui.btn_btn_kwkrei.hide()
+        self.ui.btn_btn_kwrb.hide()
+        self.ui.btn_btn_kwsonora.hide()
 
         if not os.path.exists(Variables().help_directory):
             os.makedirs(Variables().help_directory, exist_ok=True)

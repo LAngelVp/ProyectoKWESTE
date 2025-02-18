@@ -1,6 +1,6 @@
-<!DOCTYPE RCC>
-<RCC version="1.0">
+<RCC>
   <qresource>
+    <file>Source/logo_analytics.png</file>
     <file>Source/DevRous2.png</file>
     <file>Source/DevRous.png</file>
   </qresource>
