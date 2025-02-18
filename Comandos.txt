@@ -1,0 +1,9 @@
+pyrcc5 resources.qrc -o resources.py
+EntornoVirtual\Scripts\activate
+pyinstaller --onefile --name "DataProcessRMPG73" --icon="logoIco.ico" --windowed "InicioSesion.py"
+
+comando para convertir un archivo de ui -> py:
+pyuic5 -x Comenzar.ui -o Comenzar.py
+
+comando para convertir un archivo de qrc -> py:
+pyrcc5 resources.qrc -o resources.py

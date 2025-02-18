@@ -1,0 +1,11 @@
+{
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.formatting.provider": "none",
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#5C0E23",
+        "titleBar.activeBackground": "#801431",
+        "titleBar.activeForeground": "#FEFBFC"
+    }
+}
