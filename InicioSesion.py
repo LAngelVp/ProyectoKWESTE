@@ -33,7 +33,7 @@ class InicioSesion(QWidget):
         self.setWindowIcon(QIcon(":/Source/LOGO_KREI_3.ico"))
         self.setWindowFlags(self.windowFlags() | Qt.WindowType.FramelessWindowHint)
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
-        self.ui.label_2.setPixmap(QPixmap(":/Source/DevRous2.png"))
+        self.ui.label_2.setPixmap(QPixmap(":/Source/logo_analytics.png"))
         self.ui.label_2.setScaledContents(True)
         dotenv_path = os.path.join(os.path.dirname(__file__), domains, '.env')
         self.ui.btn_manejoventana_2.setIcon(QIcon(":Source/Icon_Close.png"))
