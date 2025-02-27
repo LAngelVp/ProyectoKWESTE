@@ -55,6 +55,7 @@ class Variables:
         self.clasificacion_vendedores_refacciones_sonora = "Clasificacion_vendedores_refacciones_sonora.json"
         self.large_clients_parts_file = 'clientes_grandes.json'
         self.parts_brands_file = 'marcas_refacciones.json'
+        self.codigos_cuentas_balanza_comprobacion_contabilidad_kweste = 'Codigos_vs_cuentas_BCC.json'
 
 #-----------------------------------------------------------
 #comment: root directory system
@@ -106,6 +107,8 @@ class Variables:
         self.nombre_documento_clasificacion_vendedores_refacciones_sonora = os.path.join(self.help_directory, self.clasificacion_vendedores_refacciones_sonora).replace('\\','/')
         self.tamaño_clientes_refacciones_kwe = os.path.join(self.help_directory, self.large_clients_parts_file).replace('\\','/')
         self.marcas_refacciones_kwe = os.path.join(self.help_directory, self.parts_brands_file).replace('\\','/')
+        
+        self.bcc_codigos_vs_cuentas = os.path.join(self.help_directory, self.codigos_cuentas_balanza_comprobacion_contabilidad_kweste).replace('\\','/')
 
         self.successfulPathDirectory = {
             "KWRB" : self.ruta_exitosos_kwrb,

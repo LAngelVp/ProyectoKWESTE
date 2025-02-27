@@ -13,11 +13,11 @@ from PyQt6.QtWidgets import QMainWindow
 from PyQt6.QtGui import QIcon, QPixmap
 # comment importamos concesionarios
 from  .KenworthEste.Home_KWESTE import *
+from  .KenworthEste.HomeContabilidad import *
 #-----------
 from  .globalModulesShare.ContenedorVariables import Variables
 from  .ventanaspy.VPrincipal import Ui_VPrincipal 
 from .globalModulesShare.documentos_json import creacion_json
-from Front.inicio_sesion import UI_Inicio_Sesion
 
 class PrincipalWindow(QMainWindow):
     def __init__(self):
@@ -36,6 +36,7 @@ class PrincipalWindow(QMainWindow):
         self.ui.panel_encabezado.setStyleSheet("margin-top:5px;")
         
         self.ui.btn_btn_kweste.clicked.connect(self.abrirkweste)
+        self.ui.btn_btn_ContabilidadKWESTE.clicked.connect(self.contabilidad_kweste)
         self.ui.btc_btc_cerrar.clicked.connect(self.cerrar)
         self.ui.btc_btc_minimizar.clicked.connect(self.minimizar)
 
@@ -51,6 +52,10 @@ class PrincipalWindow(QMainWindow):
     def abrirkweste(self):
         self.ventana = Home_KWESTE()
         self.ventana.show()
+        
+    def contabilidad_kweste(self):
+        self.vUiContabilidad = VContabilidadKWESTE()
+        self.vUiContabilidad.show()
 
     def minimizar(self):
         self.showMinimized()

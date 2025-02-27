@@ -1,5 +1,29 @@
 <RCC>
   <qresource>
+    <file>Source/comprobado.png</file>
+    <file>Source/devRous.png</file>
+    <file>Source/DevRous2.png</file>
+    <file>Source/Icon_Close.png</file>
+    <file>Source/Icon_Delete.png</file>
+    <file>Source/Icon_Help.png</file>
+    <file>Source/Icon_Minimize.png</file>
+    <file>Source/Icon_Proccess.png</file>
+    <file>Source/Icon_Upload.png</file>
+    <file>Source/IconContabilidad.png</file>
+    <file>Source/icono.py</file>
+    <file>Source/kreilogo.jpg</file>
+    <file>Source/KWE.ico</file>
+    <file>Source/KWESTE.png</file>
+    <file>Source/logo_analytics.png</file>
+    <file>Source/LOGO_KREI.png</file>
+    <file>Source/LOGO_KREI_3.ico</file>
+    <file>Source/logo_krei2.png</file>
+    <file>Source/LOGO_KWE.png</file>
+    <file>Source/LOGO_KWRB.png</file>
+    <file>Source/Logo_KWSonora.png</file>
+    <file>Source/LOGOKREI.png</file>
+    <file>Source/logoSinFondo.ico</file>
+    <file>Source/rutas.svg</file>
     <file>Source/logo_analytics.png</file>
     <file>Source/DevRous2.png</file>
     <file>Source/DevRous.png</file>

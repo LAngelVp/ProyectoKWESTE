@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'c:\Users\Angel Rodriguez\LUIS_ANGEL_VALLEJO\ProyectoKWESTE\Front\ventanasui\VPrincipal.ui'
+# Form implementation generated from reading ui file 'c:\Users\Angel Rodriguez\Microsoft\ProyectoKWESTE\Front\ventanasui\VPrincipal.ui'
 #
 # Created by: PyQt6 UI code generator 6.8.1
 #
@@ -13,23 +13,23 @@ class Ui_VPrincipal(object):
     def setupUi(self, VPrincipal):
         VPrincipal.setObjectName("VPrincipal")
         VPrincipal.setEnabled(True)
-        VPrincipal.resize(320, 270)
+        VPrincipal.resize(320, 220)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(VPrincipal.sizePolicy().hasHeightForWidth())
         VPrincipal.setSizePolicy(sizePolicy)
-        VPrincipal.setMinimumSize(QtCore.QSize(320, 270))
-        VPrincipal.setMaximumSize(QtCore.QSize(320, 270))
+        VPrincipal.setMinimumSize(QtCore.QSize(320, 220))
+        VPrincipal.setMaximumSize(QtCore.QSize(320, 220))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("c:\\Users\\Angel Rodriguez\\LUIS_ANGEL_VALLEJO\\ProyectoKWESTE\\Front\\ventanasui\\Source/KWE.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("c:\\Users\\Angel Rodriguez\\Microsoft\\ProyectoKWESTE\\Front\\ventanasui\\Source/KWE.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         VPrincipal.setWindowIcon(icon)
         VPrincipal.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         VPrincipal.setAutoFillBackground(False)
         VPrincipal.setStyleSheet("#VPrincipal{\n"
-"min-height:270px;\n"
+"min-height:220px;\n"
 "min-width: 320px;\n"
-"max-height: 270px;\n"
+"max-height: 220px;\n"
 "max-width: 320px;\n"
 "}\n"
 "#panel_principal{\n"
@@ -66,12 +66,13 @@ class Ui_VPrincipal(object):
 "max-height: 35px;\n"
 "}\n"
 "#panel_img_logo{\n"
-"min-height: 120px;\n"
-"    max-height: 120px;\n"
+"min-height: 80px;\n"
+"    max-height: 90px;\n"
 "}\n"
 "#imgPrincipalMenu{\n"
 "    margin-left: 60px;\n"
 "    margin-right: 60px;\n"
+"max-height:100px;\n"
 "}\n"
 "#VPrincipal{\n"
 "background-color: rgb(255, 255, 255);\n"
@@ -83,11 +84,33 @@ class Ui_VPrincipal(object):
         VPrincipal.setDockNestingEnabled(True)
         self.panel_principal = QtWidgets.QWidget(parent=VPrincipal)
         self.panel_principal.setObjectName("panel_principal")
-        self.gridLayout_2 = QtWidgets.QGridLayout(self.panel_principal)
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout_2.setHorizontalSpacing(0)
-        self.gridLayout_2.setVerticalSpacing(15)
-        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.panel_principal)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.panel_encabezado = QtWidgets.QWidget(parent=self.panel_principal)
+        self.panel_encabezado.setObjectName("panel_encabezado")
+        self.gridLayout = QtWidgets.QGridLayout(self.panel_encabezado)
+        self.gridLayout.setContentsMargins(0, 0, 5, 0)
+        self.gridLayout.setSpacing(0)
+        self.gridLayout.setObjectName("gridLayout")
+        spacerItem = QtWidgets.QSpacerItem(310, 14, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout.addItem(spacerItem, 0, 0, 1, 1)
+        self.btc_btc_cerrar = QtWidgets.QPushButton(parent=self.panel_encabezado)
+        self.btc_btc_cerrar.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.btc_btc_cerrar.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("c:\\Users\\Angel Rodriguez\\Microsoft\\ProyectoKWESTE\\Front\\ventanasui\\../../../../../Downloads/rutas.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.btc_btc_cerrar.setIcon(icon1)
+        self.btc_btc_cerrar.setIconSize(QtCore.QSize(28, 28))
+        self.btc_btc_cerrar.setObjectName("btc_btc_cerrar")
+        self.gridLayout.addWidget(self.btc_btc_cerrar, 0, 2, 1, 1)
+        self.btc_btc_minimizar = QtWidgets.QPushButton(parent=self.panel_encabezado)
+        self.btc_btc_minimizar.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.btc_btc_minimizar.setText("")
+        self.btc_btc_minimizar.setIconSize(QtCore.QSize(28, 28))
+        self.btc_btc_minimizar.setObjectName("btc_btc_minimizar")
+        self.gridLayout.addWidget(self.btc_btc_minimizar, 0, 1, 1, 1)
+        self.verticalLayout.addWidget(self.panel_encabezado)
         self.panel_img_logo = QtWidgets.QWidget(parent=self.panel_principal)
         self.panel_img_logo.setObjectName("panel_img_logo")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.panel_img_logo)
@@ -101,7 +124,7 @@ class Ui_VPrincipal(object):
         self.imgPrincipalMenu.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.imgPrincipalMenu.setObjectName("imgPrincipalMenu")
         self.horizontalLayout.addWidget(self.imgPrincipalMenu)
-        self.gridLayout_2.addWidget(self.panel_img_logo, 1, 0, 1, 1)
+        self.verticalLayout.addWidget(self.panel_img_logo)
         self.panel_btn_sucursales = QtWidgets.QWidget(parent=self.panel_principal)
         self.panel_btn_sucursales.setMinimumSize(QtCore.QSize(0, 0))
         self.panel_btn_sucursales.setMaximumSize(QtCore.QSize(16777215, 16777215))
@@ -110,7 +133,8 @@ class Ui_VPrincipal(object):
         self.gridLayout_3 = QtWidgets.QGridLayout(self.panel_btn_sucursales)
         self.gridLayout_3.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetDefaultConstraint)
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout_3.setSpacing(0)
+        self.gridLayout_3.setHorizontalSpacing(0)
+        self.gridLayout_3.setVerticalSpacing(10)
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.btn_btn_kweste = QtWidgets.QPushButton(parent=self.panel_btn_sucursales)
         self.btn_btn_kweste.setMinimumSize(QtCore.QSize(0, 30))
@@ -124,33 +148,13 @@ class Ui_VPrincipal(object):
         self.btn_btn_kweste.setStyleSheet("")
         self.btn_btn_kweste.setObjectName("btn_btn_kweste")
         self.gridLayout_3.addWidget(self.btn_btn_kweste, 0, 0, 1, 1)
-        self.gridLayout_2.addWidget(self.panel_btn_sucursales, 2, 0, 1, 1)
-        self.panel_encabezado = QtWidgets.QWidget(parent=self.panel_principal)
-        self.panel_encabezado.setObjectName("panel_encabezado")
-        self.gridLayout = QtWidgets.QGridLayout(self.panel_encabezado)
-        self.gridLayout.setContentsMargins(0, 0, 5, 0)
-        self.gridLayout.setSpacing(0)
-        self.gridLayout.setObjectName("gridLayout")
-        spacerItem = QtWidgets.QSpacerItem(310, 14, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.gridLayout.addItem(spacerItem, 0, 0, 1, 1)
-        self.btc_btc_cerrar = QtWidgets.QPushButton(parent=self.panel_encabezado)
-        self.btc_btc_cerrar.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.btc_btc_cerrar.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("c:\\Users\\Angel Rodriguez\\LUIS_ANGEL_VALLEJO\\ProyectoKWESTE\\Front\\ventanasui\\../../../../../Downloads/rutas.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.btc_btc_cerrar.setIcon(icon1)
-        self.btc_btc_cerrar.setIconSize(QtCore.QSize(28, 28))
-        self.btc_btc_cerrar.setObjectName("btc_btc_cerrar")
-        self.gridLayout.addWidget(self.btc_btc_cerrar, 0, 2, 1, 1)
-        self.btc_btc_minimizar = QtWidgets.QPushButton(parent=self.panel_encabezado)
-        self.btc_btc_minimizar.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.btc_btc_minimizar.setText("")
-        self.btc_btc_minimizar.setIconSize(QtCore.QSize(28, 28))
-        self.btc_btc_minimizar.setObjectName("btc_btc_minimizar")
-        self.gridLayout.addWidget(self.btc_btc_minimizar, 0, 1, 1, 1)
-        self.gridLayout_2.addWidget(self.panel_encabezado, 0, 0, 1, 1)
+        self.btn_btn_ContabilidadKWESTE = QtWidgets.QPushButton(parent=self.panel_btn_sucursales)
+        self.btn_btn_ContabilidadKWESTE.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.btn_btn_ContabilidadKWESTE.setObjectName("btn_btn_ContabilidadKWESTE")
+        self.gridLayout_3.addWidget(self.btn_btn_ContabilidadKWESTE, 1, 0, 1, 1)
+        self.verticalLayout.addWidget(self.panel_btn_sucursales)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.gridLayout_2.addItem(spacerItem1, 3, 0, 1, 1)
+        self.verticalLayout.addItem(spacerItem1)
         VPrincipal.setCentralWidget(self.panel_principal)
 
         self.retranslateUi(VPrincipal)
@@ -159,4 +163,5 @@ class Ui_VPrincipal(object):
     def retranslateUi(self, VPrincipal):
         _translate = QtCore.QCoreApplication.translate
         VPrincipal.setWindowTitle(_translate("VPrincipal", "CONCESIONARIOS"))
-        self.btn_btn_kweste.setText(_translate("VPrincipal", "KENWORTH DEL ESTE"))
+        self.btn_btn_kweste.setText(_translate("VPrincipal", "Reportes BI"))
+        self.btn_btn_ContabilidadKWESTE.setText(_translate("VPrincipal", "Reportes Contabilidad"))
