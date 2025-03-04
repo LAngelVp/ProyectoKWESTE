@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
+    <width>650</width>
     <height>460</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>500</width>
+    <width>650</width>
     <height>460</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>500</width>
+    <width>650</width>
     <height>460</height>
    </size>
   </property>
@@ -79,6 +79,7 @@ color: rgb(0, 0, 0);
 }
 [objectName^=&quot;Tabla&quot;]{
 background-color: rgb(255, 255, 255);
+color: rgb(29, 28, 28);
 }
 [objectName*=&quot;Tabla&quot;]:QHeaderView{
 background-color: #4CAF50;

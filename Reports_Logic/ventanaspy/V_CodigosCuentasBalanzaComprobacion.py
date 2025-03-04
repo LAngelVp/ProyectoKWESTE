@@ -12,9 +12,9 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Formulario_BusquedaCuetasCodigos_BalanzaComprobacion(object):
     def setupUi(self, Formulario_BusquedaCuetasCodigos_BalanzaComprobacion):
         Formulario_BusquedaCuetasCodigos_BalanzaComprobacion.setObjectName("Formulario_BusquedaCuetasCodigos_BalanzaComprobacion")
-        Formulario_BusquedaCuetasCodigos_BalanzaComprobacion.resize(500, 460)
-        Formulario_BusquedaCuetasCodigos_BalanzaComprobacion.setMinimumSize(QtCore.QSize(500, 460))
-        Formulario_BusquedaCuetasCodigos_BalanzaComprobacion.setMaximumSize(QtCore.QSize(500, 460))
+        Formulario_BusquedaCuetasCodigos_BalanzaComprobacion.resize(650, 460)
+        Formulario_BusquedaCuetasCodigos_BalanzaComprobacion.setMinimumSize(QtCore.QSize(650, 460))
+        Formulario_BusquedaCuetasCodigos_BalanzaComprobacion.setMaximumSize(QtCore.QSize(650, 460))
         Formulario_BusquedaCuetasCodigos_BalanzaComprobacion.setStyleSheet("#Formulario_BusquedaCuetasCodigos_BalanzaComprobacion{\n"
 "background-color: rgb(234, 234, 234);\n"
 "}\n"
@@ -68,6 +68,7 @@ class Ui_Formulario_BusquedaCuetasCodigos_BalanzaComprobacion(object):
 "}\n"
 "[objectName^=\"Tabla\"]{\n"
 "background-color: rgb(255, 255, 255);\n"
+"color: rgb(29, 28, 28);\n"
 "}\n"
 "[objectName*=\"Tabla\"]:QHeaderView{\n"
 "background-color: #4CAF50;\n"

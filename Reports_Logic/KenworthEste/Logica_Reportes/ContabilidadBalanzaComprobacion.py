@@ -32,10 +32,11 @@ class ContabilidadBalanzaComprobacionAnalisis:
             codigos = pd.read_json(self.variables.bcc_codigos_vs_cuentas)
         except FileNotFoundError:
             return
-        
-        col_codigo = df.merge(codigos, on='Cuenta', how='left')
-        # col_codigo["Codigo"]
-        df.insert(2, 'Codigo', col_codigo["Codigo"], False)
+        df['Cuenta'] = df['Cuenta'].astype(str)
+        codigos['Cuenta'] = codigos['Cuenta'].astype(str)
+        df = pd.merge(df, codigos[['Cuenta', 'Codigo']], on='Cuenta', how='left')
+        columna_codigos = df.pop('Codigo')
+        df.insert(2, 'Codigo', columna_codigos, False)
         
         self.variables.guardar_datos_dataframe(self.nombre_doc, df, self.concesionario)
         
