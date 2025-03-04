@@ -17,6 +17,8 @@ from .Logica_Reportes.InventarioUnidades import *
 from .Logica_Reportes.ServicioDetallado import *
 from .Logica_Reportes.Refacciones import *
 from .Logica_Reportes.Financiero import *
+# // CONTABILIDAD
+from .Logica_Reportes.ContabilidadBalanzaComprobacion import *
 from .Logica_Reportes.Contabilidad import FactSitic_document, Nota_credito_retenido, FactSat_document
 from .Logica_Reportes.VentasPerdidas import VentasPerdidas
 #-----------------------------------
@@ -85,17 +87,12 @@ class KenworthConnect():
     # NCR FACTSITIC
     def NcrFactSitic(self):
         Nota_credito_retenido().Ncr
-    
     # FACTURAS FACTSAT
     def FacturasFactSat(self):
         FactSat_document().Facturas
-    
     # NOTA DE CREDITO FACTSAT
     def NotaCreditoFactSat(self):
-        try:
-            FactSat_document().Nota_de_credito
-        except Exception as e:
-            print(e)
+        FactSat_document().Nota_de_credito
     def VentasPerdidasMatriz(self):
         VentasPerdidas().venta_perdida_matriz()
     def VentasPerdidasTrebol(self):
@@ -109,10 +106,7 @@ class KenworthConnect():
     def VentasPerdidasVillahermosa(self):
         VentasPerdidas().venta_perdida_villahermosa()
     def VentasPerdidasCoatzacoalcos(self):
-        try:
-            VentasPerdidas().venta_perdida_coatzacoalcos()
-        except Exception as e:
-            print(e)
+        VentasPerdidas().venta_perdida_coatzacoalcos()
     def VentasPerdidasMerida(self):
         VentasPerdidas().venta_perdida_merida()
     def VentasPerdidasOaxaca(self):
@@ -121,4 +115,9 @@ class KenworthConnect():
         VentasPerdidas().venta_perdida_tuxtla1()
     def VentasPerdidasTuxtla2(self):
         VentasPerdidas().venta_perdida_tuxtla2()
-    
+# // CONTABILIDAD
+    def BalanzaComprobacion(self):
+        try:
+            ContabilidadBalanzaComprobacionAnalisis()
+        except Exception as e:
+            print(e)

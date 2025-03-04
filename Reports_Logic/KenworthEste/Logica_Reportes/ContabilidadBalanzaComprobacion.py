@@ -13,7 +13,7 @@ class ContabilidadBalanzaComprobacionAnalisis:
     def __init__(self):
         self.variables = Variables()
         self.concesionario = Concesionarios().concesionarioEste
-        nombre_doc = 'BCC.xlsx'
+        self.nombre_doc = 'BCC.xlsx'
         path = os.path.join(self.variables.ruta_Trabajos_kwe,self.nombre_doc)
         df = pd.read_excel(path, sheet_name='Hoja2')
         df = df.replace(to_replace=';', value='-', regex=True)
@@ -36,5 +36,9 @@ class ContabilidadBalanzaComprobacionAnalisis:
         col_codigo = df.merge(codigos, on='Cuenta', how='left')
         # col_codigo["Codigo"]
         df.insert(2, 'Codigo', col_codigo["Codigo"], False)
+        
+        self.variables.guardar_datos_dataframe(self.nombre_doc, df, self.concesionario)
+        
+        
     
 

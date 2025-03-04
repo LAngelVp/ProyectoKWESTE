@@ -56,7 +56,6 @@ class PrincipalWindow(QMainWindow):
     def contabilidad_kweste(self):
         self.vUiContabilidad = VContabilidadKWESTE()
         self.vUiContabilidad.show()
-
     def minimizar(self):
         self.showMinimized()
 

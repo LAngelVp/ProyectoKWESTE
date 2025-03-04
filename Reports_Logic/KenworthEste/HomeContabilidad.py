@@ -15,20 +15,20 @@ from ..globalModulesShare.ContenedorVariables import Variables
 from ..globalModulesShare.Inicio_FechaMovimiento import *
 from .KenworthConnect import *
 from ..globalModulesShare.InicialClassObjetivos import *
-from ..ventanaspy.V_Procesador import Ui_VentanaProcesador
+from ..ventanaspy.V_ProcesadorGeneral import Ui_V_ProcesadorGeneral
 from ..globalModulesShare.Home_rutas import *
-from .Vendedores import *
+from .FuncionesBalanzaComprobacionContabilidad import *
 from ..globalModulesShare.mensajes_alertas import Mensajes_Alertas
 from ..globalModulesShare.icono import *
 from ..globalModulesShare.documentos_json import *
 import subprocess
 
-class VContabilidadKWESTE(QWidget):
+class VContabilidadKWESTE(QMainWindow):
     closed = pyqtSignal()
     def __init__(self):
         super(VContabilidadKWESTE,self).__init__()
         self.variables = Variables()
-        self.ui = Ui_VentanaProcesador()
+        self.ui = Ui_V_ProcesadorGeneral()
         self.ui.setupUi(self)
         # variables a las rutas de los iconos e imagenes
         Icon_Cerrar = QIcon(":/Source/Icon_Close.png")
@@ -76,10 +76,13 @@ class VContabilidadKWESTE(QWidget):
         self.ui.btn_btn_Errores.clicked.connect(self.abrir_ruta_errores)
         self.ui.btn_btn_Originales.clicked.connect(self.abrir_ruta_originales)
         self.ui.btn_btn_Procesados.clicked.connect(self.abrir_ruta_procesados)
-
+        
+        self.menu = QMenuBar()
+        self.menu_documento = self.menu.addMenu("Opciones")
         # MENU DE OPCIONES
         # self.ui.actionObjetivos_Mensuales_PagosClientes.triggered.connect(self.ObjetivosPagoClientes)
-        # self.ui.actionFechaMovimiento.triggered.connect(self.FechaMovimiento)
+        self.ui.actionFechaMovimiento.triggered.connect(self.FechaMovimiento)
+        self.ui.actionCodigosCuentas.triggered.connect(self.CodigosCuentas)
         # self.ui.actionDirecciones_de_envio.triggered.connect(self.direcciones_envio)
         # self.ui.actionDepartamentos.triggered.connect(self.departamentos_vendedores)
 
@@ -103,6 +106,10 @@ class VContabilidadKWESTE(QWidget):
         pass
     def Ayuda_callback(self):
         open_new(self.variables.pdf)
+        
+    def CodigosCuentas(self):
+        self.v_CodigosCuentas = FuncionesBComprobacionContabilidad()
+        self.v_CodigosCuentas.show()
 
     # def departamentos_vendedores(self):
     #     self.ventana_departamentos = Vendedores()
@@ -417,7 +424,7 @@ class trabajohilo(QThread):
         #---------------------------------------
         # diccionario de los archivos.
         diccionario_archivos = {
-            "BCC.xlsx" : KenworthConnect().Credito,
+            "BCC.xlsx" : KenworthConnect().BalanzaComprobacion,
         }
         #-----------------------------------------------
         while True:

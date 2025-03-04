@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'c:\Users\Angel Rodriguez\Microsoft\ProyectoKWESTE\Front\ventanasui\V_Procesador.ui'
+# Form implementation generated from reading ui file 'c:\Users\Angel Rodriguez\Microsoft\ProyectoKWESTE\Front\ventanasui\V_ProcesadorGeneral.ui'
 #
 # Created by: PyQt6 UI code generator 6.8.1
 #
@@ -9,11 +9,13 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class Ui_VentanaProcesador(object):
-    def setupUi(self, VentanaProcesador):
-        VentanaProcesador.setObjectName("VentanaProcesador")
-        VentanaProcesador.resize(800, 520)
-        VentanaProcesador.setStyleSheet("#VentanaProcesador{\n"
+class Ui_V_ProcesadorGeneral(object):
+    def setupUi(self, V_ProcesadorGeneral):
+        V_ProcesadorGeneral.setObjectName("V_ProcesadorGeneral")
+        V_ProcesadorGeneral.resize(800, 520)
+        V_ProcesadorGeneral.setMinimumSize(QtCore.QSize(800, 520))
+        V_ProcesadorGeneral.setMaximumSize(QtCore.QSize(800, 520))
+        V_ProcesadorGeneral.setStyleSheet("#V_ProcesadorGeneral{\n"
 "min-width: 800px;\n"
 "min-height:520px;\n"
 "max-width: 800px;\n"
@@ -52,19 +54,23 @@ class Ui_VentanaProcesador(object):
 "[objectName*=\"btn_btn\"]:hover{\n"
 "background-color: rgb(69, 163, 235);\n"
 "}\n"
-"#contenedor_principal{\n"
-"border-top-left-radius: 10px;\n"
-"border-top-right-radius: 10px;\n"
-"}\n"
 "#lblLogo{\n"
 "background-color: rgb(234, 234, 234);\n"
 "color:rgb(0, 0, 0)\n"
+"}\n"
+"#menuBar{\n"
+"background-color: rgb(255, 255, 255);\n"
+"color: rgb(0, 0, 0);\n"
+"border-top-left-radius: 10px;\n"
+"border-top-right-radius: 10px;\n"
 "}")
-        self.gridLayout_3 = QtWidgets.QGridLayout(VentanaProcesador)
+        self.centralwidget = QtWidgets.QWidget(parent=V_ProcesadorGeneral)
+        self.centralwidget.setObjectName("centralwidget")
+        self.gridLayout_3 = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_3.setSpacing(0)
         self.gridLayout_3.setObjectName("gridLayout_3")
-        self.contenedor_principal = QtWidgets.QFrame(parent=VentanaProcesador)
+        self.contenedor_principal = QtWidgets.QFrame(parent=self.centralwidget)
         self.contenedor_principal.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.contenedor_principal.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.contenedor_principal.setObjectName("contenedor_principal")
@@ -324,6 +330,7 @@ class Ui_VentanaProcesador(object):
         self.btn_btn_Ayuda.setAutoFillBackground(False)
         self.btn_btn_Ayuda.setStyleSheet("")
         self.btn_btn_Ayuda.setLocale(QtCore.QLocale(QtCore.QLocale.Language.Spanish, QtCore.QLocale.Country.Nicaragua))
+        self.btn_btn_Ayuda.setInputMethodHints(QtCore.Qt.InputMethodHint.ImhNone)
         self.btn_btn_Ayuda.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("c:\\Users\\Angel Rodriguez\\Microsoft\\ProyectoKWESTE\\Front\\ventanasui\\../Source/Icon_Help.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -335,27 +342,48 @@ class Ui_VentanaProcesador(object):
         self.gridLayout_2.addWidget(self.contenedor_Pie, 2, 0, 1, 1)
         self.gridLayout.addWidget(self.contenedor, 0, 0, 1, 1)
         self.gridLayout_3.addWidget(self.contenedor_principal, 0, 0, 1, 1)
+        V_ProcesadorGeneral.setCentralWidget(self.centralwidget)
+        self.menuBar = QtWidgets.QMenuBar(parent=V_ProcesadorGeneral)
+        self.menuBar.setGeometry(QtCore.QRect(0, 0, 800, 21))
+        self.menuBar.setObjectName("menuBar")
+        self.menuOpciones = QtWidgets.QMenu(parent=self.menuBar)
+        self.menuOpciones.setObjectName("menuOpciones")
+        self.menuBalanzaComprobacin = QtWidgets.QMenu(parent=self.menuOpciones)
+        self.menuBalanzaComprobacin.setObjectName("menuBalanzaComprobacin")
+        V_ProcesadorGeneral.setMenuBar(self.menuBar)
+        self.actionFechaMovimiento = QtGui.QAction(parent=V_ProcesadorGeneral)
+        self.actionFechaMovimiento.setObjectName("actionFechaMovimiento")
+        self.actionCodigosCuentas = QtGui.QAction(parent=V_ProcesadorGeneral)
+        self.actionCodigosCuentas.setObjectName("actionCodigosCuentas")
+        self.menuBalanzaComprobacin.addAction(self.actionCodigosCuentas)
+        self.menuOpciones.addAction(self.actionFechaMovimiento)
+        self.menuOpciones.addAction(self.menuBalanzaComprobacin.menuAction())
+        self.menuBar.addAction(self.menuOpciones.menuAction())
 
-        self.retranslateUi(VentanaProcesador)
-        QtCore.QMetaObject.connectSlotsByName(VentanaProcesador)
+        self.retranslateUi(V_ProcesadorGeneral)
+        QtCore.QMetaObject.connectSlotsByName(V_ProcesadorGeneral)
 
-    def retranslateUi(self, VentanaProcesador):
+    def retranslateUi(self, V_ProcesadorGeneral):
         _translate = QtCore.QCoreApplication.translate
-        VentanaProcesador.setWindowTitle(_translate("VentanaProcesador", "Form"))
-        self.lblLogo.setText(_translate("VentanaProcesador", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:792;\">CONTABILIDAD </span><img src=\":/Source/IconContabilidad.png\" width=\"40\" height=\"35\"/></p></body></html>"))
-        self.btc_btc_Minimizar.setToolTip(_translate("VentanaProcesador", "Minimizar"))
-        self.btc_btc_Cerrar.setToolTip(_translate("VentanaProcesador", "Cerrar"))
-        self.txt_cola.setText(_translate("VentanaProcesador", "Trabajos En Espera"))
-        self.txt_procesado.setText(_translate("VentanaProcesador", "Trabajos Realizados"))
-        self.btn_btn_Subir.setToolTip(_translate("VentanaProcesador", "<html><head/><body><p>Selecciona un archivo .xlsx</p></body></html>"))
-        self.btn_btn_Subir.setText(_translate("VentanaProcesador", "Subir"))
-        self.btn_btn_Eliminar.setToolTip(_translate("VentanaProcesador", "<html><head/><body><p>Elimina los archivos procesados</p></body></html>"))
-        self.btn_btn_Eliminar.setText(_translate("VentanaProcesador", "Eliminar"))
-        self.btn_btn_Comenzar.setToolTip(_translate("VentanaProcesador", "<html><head/><body><p>Comenzar el proceso</p></body></html>"))
-        self.btn_btn_Comenzar.setText(_translate("VentanaProcesador", "Comenzar"))
-        self.btn_btn_Procesados.setToolTip(_translate("VentanaProcesador", "<html><head/><body><p>Ruta de archivos procesados</p></body></html>"))
-        self.btn_btn_Procesados.setText(_translate("VentanaProcesador", "Procesados"))
-        self.btn_btn_Originales.setToolTip(_translate("VentanaProcesador", "<html><head/><body><p>Ruta de archivos originales</p></body></html>"))
-        self.btn_btn_Originales.setText(_translate("VentanaProcesador", "Originales"))
-        self.btn_btn_Errores.setToolTip(_translate("VentanaProcesador", "<html><head/><body><p>Ruta de archivos erroneos</p></body></html>"))
-        self.btn_btn_Errores.setText(_translate("VentanaProcesador", "Erroneos"))
+        V_ProcesadorGeneral.setWindowTitle(_translate("V_ProcesadorGeneral", "MainWindow"))
+        self.lblLogo.setText(_translate("V_ProcesadorGeneral", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:792;\">CONTABILIDAD </span><img src=\":/Source/IconContabilidad.png\" width=\"40\" height=\"35\"/></p></body></html>"))
+        self.btc_btc_Minimizar.setToolTip(_translate("V_ProcesadorGeneral", "Minimizar"))
+        self.btc_btc_Cerrar.setToolTip(_translate("V_ProcesadorGeneral", "Cerrar"))
+        self.txt_cola.setText(_translate("V_ProcesadorGeneral", "Trabajos En Espera"))
+        self.txt_procesado.setText(_translate("V_ProcesadorGeneral", "Trabajos Realizados"))
+        self.btn_btn_Subir.setToolTip(_translate("V_ProcesadorGeneral", "<html><head/><body><p>Selecciona un archivo .xlsx</p></body></html>"))
+        self.btn_btn_Subir.setText(_translate("V_ProcesadorGeneral", "Subir"))
+        self.btn_btn_Eliminar.setToolTip(_translate("V_ProcesadorGeneral", "<html><head/><body><p>Elimina los archivos procesados</p></body></html>"))
+        self.btn_btn_Eliminar.setText(_translate("V_ProcesadorGeneral", "Eliminar"))
+        self.btn_btn_Comenzar.setToolTip(_translate("V_ProcesadorGeneral", "<html><head/><body><p>Comenzar el proceso</p></body></html>"))
+        self.btn_btn_Comenzar.setText(_translate("V_ProcesadorGeneral", "Comenzar"))
+        self.btn_btn_Procesados.setToolTip(_translate("V_ProcesadorGeneral", "<html><head/><body><p>Ruta de archivos procesados</p></body></html>"))
+        self.btn_btn_Procesados.setText(_translate("V_ProcesadorGeneral", "Procesados"))
+        self.btn_btn_Originales.setToolTip(_translate("V_ProcesadorGeneral", "<html><head/><body><p>Ruta de archivos originales</p></body></html>"))
+        self.btn_btn_Originales.setText(_translate("V_ProcesadorGeneral", "Originales"))
+        self.btn_btn_Errores.setToolTip(_translate("V_ProcesadorGeneral", "<html><head/><body><p>Ruta de archivos erroneos</p></body></html>"))
+        self.btn_btn_Errores.setText(_translate("V_ProcesadorGeneral", "Erroneos"))
+        self.menuOpciones.setTitle(_translate("V_ProcesadorGeneral", "Opciones"))
+        self.menuBalanzaComprobacin.setTitle(_translate("V_ProcesadorGeneral", "Balanza Comprobación"))
+        self.actionFechaMovimiento.setText(_translate("V_ProcesadorGeneral", "Fecha Movimiento"))
+        self.actionCodigosCuentas.setText(_translate("V_ProcesadorGeneral", "Codigos Cuentas"))
