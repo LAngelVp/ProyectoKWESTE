@@ -18,8 +18,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>650</width>
-    <height>460</height>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -143,13 +143,6 @@ font-weight: bold;
          </item>
          <item row="1" column="0">
           <layout class="QGridLayout" name="gridLayout_2">
-           <item row="0" column="0">
-            <widget class="QLabel" name="etiqueta_buscarpor">
-             <property name="text">
-              <string>Buscar por</string>
-             </property>
-            </widget>
-           </item>
            <item row="0" column="1">
             <widget class="QComboBox" name="cajaopciones_busca_cuenta_codigo">
              <item>
@@ -164,8 +157,26 @@ font-weight: bold;
              </item>
             </widget>
            </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="etiqueta_buscarpor">
+             <property name="text">
+              <string>Buscar por</string>
+             </property>
+            </widget>
+           </item>
            <item row="0" column="2">
-            <widget class="QLineEdit" name="txt_filtro"/>
+            <widget class="QLineEdit" name="txt_filtro">
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QPushButton" name="btn_btn_buscar">
+             <property name="text">
+              <string>Buscar</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
@@ -198,7 +209,11 @@ font-weight: bold;
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QLineEdit" name="txt_numcuenta"/>
+            <widget class="QLineEdit" name="txt_numcuenta">
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
            </item>
            <item row="1" column="0">
             <widget class="QLabel" name="etiqueta_codigo">
@@ -208,12 +223,26 @@ font-weight: bold;
             </widget>
            </item>
            <item row="1" column="1">
-            <widget class="QLineEdit" name="txt_codigo"/>
+            <widget class="QLineEdit" name="txt_codigo">
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
          <item row="2" column="1">
           <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QPushButton" name="btn_btn_LimpiarCampos">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="text">
+              <string>Limpiar Datos</string>
+             </property>
+            </widget>
+           </item>
            <item>
             <widget class="QPushButton" name="btn_btn_Guadar">
              <property name="cursor">
@@ -278,7 +307,14 @@ font-weight: bold;
             </widget>
            </item>
            <item>
-            <widget class="QTableView" name="Tabla_DatosExistentes"/>
+            <widget class="QTableView" name="Tabla_DatosExistentes">
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+            </widget>
            </item>
           </layout>
          </item>
@@ -292,7 +328,14 @@ font-weight: bold;
             </widget>
            </item>
            <item>
-            <widget class="QTableView" name="Tabla_DatosNuevos"/>
+            <widget class="QTableView" name="Tabla_DatosNuevos">
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+            </widget>
            </item>
           </layout>
          </item>

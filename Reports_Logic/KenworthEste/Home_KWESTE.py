@@ -17,7 +17,7 @@ from .KenworthConnect import *
 from ..globalModulesShare.InicialClassObjetivos import *
 from ..ventanaspy.V_KWESTE import *
 from ..globalModulesShare.Home_rutas import *
-from .Vendedores import *
+from .Controller.Vendedores import *
 from ..globalModulesShare.mensajes_alertas import Mensajes_Alertas
 import subprocess
 

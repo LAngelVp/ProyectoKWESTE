@@ -17,7 +17,7 @@ from .KenworthConnect import *
 from ..globalModulesShare.InicialClassObjetivos import *
 from ..ventanaspy.V_ProcesadorGeneral import Ui_V_ProcesadorGeneral
 from ..globalModulesShare.Home_rutas import *
-from .FuncionesBalanzaComprobacionContabilidad import *
+from .Controller.FuncionesBalanzaComprobacionContabilidad import *
 from ..globalModulesShare.mensajes_alertas import Mensajes_Alertas
 from ..globalModulesShare.icono import *
 from ..globalModulesShare.documentos_json import *
