@@ -38,6 +38,8 @@ class ContabilidadBalanzaComprobacionAnalisis:
         columna_codigos = df.pop('Codigo')
         df.insert(2, 'Codigo', columna_codigos, False)
         
+        df["Mes"] = self.variables.nombre_mes()
+        
         self.variables.guardar_datos_dataframe(self.nombre_doc, df, self.concesionario)
         
         
