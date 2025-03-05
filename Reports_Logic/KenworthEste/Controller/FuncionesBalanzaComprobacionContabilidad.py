@@ -76,16 +76,16 @@ class FuncionesBComprobacionContabilidad(QWidget):
         codigo = self.ui.txt_codigo.text().strip()
         if self.ui.txt_numcuenta.hasAcceptableInput() and codigo != "":
             objeto = {
-                'codigo' : codigo,
-                'cuenta' : cuenta
+                'Cuenta' : cuenta,
+                'Codigo' : codigo
             }
             creacion_json(self.variables.help_directory, self.variables.codigos_cuentas_balanza_comprobacion_contabilidad_kweste, objeto).agregar_json
             
         if self.excel is not None:
             for fila in self.excel.values:
                 objeto = {
-                    'codigo' : str(fila[1]),
-                    'cuenta' : str(fila[0])
+                    'Cuenta' : str(fila[0]),
+                    'Codigo' : str(fila[1])
                 }
                 creacion_json(self.variables.help_directory, self.variables.codigos_cuentas_balanza_comprobacion_contabilidad_kweste, objeto).agregar_json
         else:
@@ -98,7 +98,7 @@ class FuncionesBComprobacionContabilidad(QWidget):
                             ("Aceptar", self.Aceptar_callback)
                         ]
                     ).mostrar
-        return
+        self.mostrar_datos_cuentas()
     
     def eliminar(self):
         if self.id_elemento_eliminar is None:
