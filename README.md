@@ -1,4 +1,4 @@
-![Kenworth del este](https://github.com/LAngelVp/ProyectoKWESTE/blob/master/Source/K-ANALYTICS/KREI%20ANALITICS-01.png)
+![Kenworth del este](https://github.com/LAngelVp/ProyectoKWESTE/blob/master/Source/K-ANALYTICS/KREI%20ANALITICS-04.png)
 
 # **KWDataProcessRMPG73**
 # **Automatización de reportes**
