@@ -86,7 +86,22 @@ background-color: #4CAF50;
 border: 1px solid #ddd;
 color: white;
 font-weight: bold;
-}</string>
+}
+#progressBar{
+border: 2px solid rgb(5, 95, 212);
+border-radius: 4px;
+background-color: rgb(104, 182, 220);
+text-align: center;
+max-height:8px;
+color: rgb(255, 255, 255);
+font-weight:bold;
+font-size:10px;
+}
+#progressBar:chunk{
+background-color: rgb(53, 125, 239);
+border-radius: 3px;
+}
+</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">
@@ -279,13 +294,20 @@ font-weight: bold;
               <cursorShape>PointingHandCursor</cursorShape>
              </property>
              <property name="text">
-              <string>Cargar CSV</string>
+              <string>Cargar Excel</string>
              </property>
             </widget>
            </item>
           </layout>
          </item>
         </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QProgressBar" name="progressBar">
+        <property name="value">
+         <number>24</number>
+        </property>
        </widget>
       </item>
       <item>

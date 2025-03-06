@@ -25,6 +25,7 @@ class FuncionesBComprobacionContabilidad(QWidget):
         self.ui.setupUi(self)
         self.setWindowTitle("Control de cuentas y codigos")
         self.setWindowIcon(QIcon(":/Source/LOGO_KREI_3.ico"))
+        self.ui.progressBar.hide()
         
         self.ui.btn_btn_Guadar.clicked.connect(self.guardar)
         self.ui.btn_btn_Eliminar.clicked.connect(self.eliminar)
@@ -85,14 +86,12 @@ class FuncionesBComprobacionContabilidad(QWidget):
             }
             creacion_json(self.variables.help_directory, self.variables.codigos_cuentas_balanza_comprobacion_contabilidad_kweste, objeto).agregar_json
             
-        if self.excel is not None:
-            
-            for indice, fila in self.excel.iterrows():
-                objeto = {
-                    'Cuenta' : str(fila['Cuenta']),
-                    'Codigo' : str(fila['Codigo'])
-                }
-                creacion_json(self.variables.help_directory, self.variables.codigos_cuentas_balanza_comprobacion_contabilidad_kweste, objeto).agregar_json
+        if self.excel is not None and len(self.excel) > 0:
+            self.trabajo_pesado = GuardarExcel(self.excel)
+            self.trabajo_pesado.Progreso.connect(self.cargar_documento)
+            self.ui.progressBar.show()
+            self.trabajo_pesado.terminado.connect(self.mostrar_datos_cuentas)
+            self.trabajo_pesado.start()
         else:
             Mensajes_Alertas(
                         "Error",
@@ -104,6 +103,9 @@ class FuncionesBComprobacionContabilidad(QWidget):
                         ]
                     ).mostrar
         self.mostrar_datos_cuentas()
+    
+    def cargar_documento(self, value):
+        self.ui.progressBar.setValue(value)
     
     def eliminar(self):
         if self.id_elemento_eliminar is None:
@@ -200,3 +202,33 @@ class FuncionesBComprobacionContabilidad(QWidget):
         
     def Aceptar_callback(self):
         pass
+
+class GuardarExcel(QThread):
+    Progreso = pyqtSignal(int)
+    terminado = pyqtSignal()
+    
+    def __init__(self, excel_data, parent=None):
+        super().__init__(parent)
+        self.excel_data = excel_data  # Los datos del Excel que se pasarán al hilo
+        self.total_filas = len(excel_data)  # Número total de filas para el progreso
+        self.variables = Variables()
+    def run(self):
+        # Cargar los datos del Excel en un ciclo
+        for indice, fila in self.excel_data.iterrows():
+            # Aquí se simula la tarea pesada, en este caso simplemente leer los datos
+            cuenta = str(fila['Cuenta'])
+            codigo = str(fila['Codigo'])
+
+            # Crear el objeto JSON para agregar
+            objeto = {
+                'Cuenta': cuenta,
+                'Codigo': codigo
+            }
+
+            # Llamar a la función para agregar el objeto (asumimos que `creacion_json` está correctamente implementada)
+            creacion_json(self.variables.help_directory, self.variables.codigos_cuentas_balanza_comprobacion_contabilidad_kweste, objeto).agregar_json
+            
+            # Emitir el progreso
+            self.Progreso.emit(int((indice + 1) / self.total_filas * 100))
+        self.terminado.emit()
+        return

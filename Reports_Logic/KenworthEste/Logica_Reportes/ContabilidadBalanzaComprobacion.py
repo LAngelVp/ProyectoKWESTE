@@ -3,6 +3,7 @@
 # RMPG - LUIS ANGEL VALLEJO PEREZ
 #########################
 # importamos librerias.
+import traceback
 import os
 import pandas as pd
 import re
@@ -45,9 +46,12 @@ class ContabilidadBalanzaComprobacionAnalisis(Variables):
             
             self.variables.guardar_datos_dataframe(self.nombre_doc, df, self.concesionario)
         except Exception as e:
-            # Mostrar el error en un messagebox de Tkinter
-            messagebox.showerror("Error", f"Ocurrió un error: {str(e)}")
-            self.root.quit()
+            # Mostrar el error en un MessageBox de Tkinter
+            error_message = f"Ocurrió un error: {str(e)}\n\nDetalles: {traceback.format_exc()}"
+            root = tk.Tk()
+            root.withdraw()  # Ocultar ventana principal
+            messagebox.showerror("Error", error_message)
+            root.quit()
         
     
 

@@ -75,7 +75,22 @@ class Ui_Formulario_BusquedaCuetasCodigos_BalanzaComprobacion(object):
 "border: 1px solid #ddd;\n"
 "color: white;\n"
 "font-weight: bold;\n"
-"}")
+"}\n"
+"#progressBar{\n"
+"border: 2px solid rgb(5, 95, 212);\n"
+"border-radius: 4px;\n"
+"background-color: rgb(104, 182, 220);\n"
+"text-align: center;\n"
+"max-height:8px;\n"
+"color: rgb(255, 255, 255);\n"
+"font-weight:bold;\n"
+"font-size:10px;\n"
+"}\n"
+"#progressBar:chunk{\n"
+"background-color: rgb(53, 125, 239);\n"
+"border-radius: 3px;\n"
+"}\n"
+"")
         self.gridLayout = QtWidgets.QGridLayout(Formulario_BusquedaCuetasCodigos_BalanzaComprobacion)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setSpacing(0)
@@ -165,6 +180,10 @@ class Ui_Formulario_BusquedaCuetasCodigos_BalanzaComprobacion(object):
         self.horizontalLayout.addWidget(self.btn_btn_CargarExcel)
         self.gridLayout_4.addLayout(self.horizontalLayout, 2, 1, 1, 1)
         self.verticalLayout_3.addWidget(self.contenedor_3)
+        self.progressBar = QtWidgets.QProgressBar(parent=self.contenedor)
+        self.progressBar.setProperty("value", 24)
+        self.progressBar.setObjectName("progressBar")
+        self.verticalLayout_3.addWidget(self.progressBar)
         self.contenedor_4 = QtWidgets.QFrame(parent=self.contenedor)
         self.contenedor_4.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.contenedor_4.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
@@ -214,6 +233,6 @@ class Ui_Formulario_BusquedaCuetasCodigos_BalanzaComprobacion(object):
         self.btn_btn_Guadar.setText(_translate("Formulario_BusquedaCuetasCodigos_BalanzaComprobacion", "Agregar"))
         self.btn_btn_Actualizar.setText(_translate("Formulario_BusquedaCuetasCodigos_BalanzaComprobacion", "Actualizar"))
         self.btn_btn_Eliminar.setText(_translate("Formulario_BusquedaCuetasCodigos_BalanzaComprobacion", "Eliminar"))
-        self.btn_btn_CargarExcel.setText(_translate("Formulario_BusquedaCuetasCodigos_BalanzaComprobacion", "Cargar CSV"))
+        self.btn_btn_CargarExcel.setText(_translate("Formulario_BusquedaCuetasCodigos_BalanzaComprobacion", "Cargar Excel"))
         self.etiquetaSub_Tabla_DatosExistentes.setText(_translate("Formulario_BusquedaCuetasCodigos_BalanzaComprobacion", "Cuentas Almacenadas"))
         self.etiquetaSub_Tabla_DatosNuevos.setText(_translate("Formulario_BusquedaCuetasCodigos_BalanzaComprobacion", "Datos por Almacenar"))
