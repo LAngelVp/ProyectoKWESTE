@@ -25,6 +25,7 @@ import subprocess
 
 class VContabilidadKWESTE(QMainWindow):
     closed = pyqtSignal()
+    CREAR_JSON_CODIGOS_BCC = pyqtSignal()
     def __init__(self):
         super(VContabilidadKWESTE,self).__init__()
         self.variables = Variables()
@@ -43,10 +44,9 @@ class VContabilidadKWESTE(QMainWindow):
         self.ui.lblLogo.setText(_translate("VentanaProcesador", 
     "<html><head/><body><p align=\"center\"><span style=\"font-size:14pt; font-weight:700;\">CONTABILIDAD </span>"
     "<img src=\":/Source/IconContabilidad.png\" width=\"40\" height=\"35\"/></p></body></html>"))
-        
+        #// VARIABLES
         # llamamos el metodo de creacion de carpetas
         self.Creacion_Carpetas()
-        self.comprobar_existencia_archivos_configuracion()
         # quitamos la barra superior
         self.setWindowFlags(self.windowFlags() | Qt.WindowType.FramelessWindowHint)
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
@@ -76,6 +76,7 @@ class VContabilidadKWESTE(QMainWindow):
         self.ui.btn_btn_Errores.clicked.connect(self.abrir_ruta_errores)
         self.ui.btn_btn_Originales.clicked.connect(self.abrir_ruta_originales)
         self.ui.btn_btn_Procesados.clicked.connect(self.abrir_ruta_procesados)
+        self.CREAR_JSON_CODIGOS_BCC.connect(self.comprobar_existencia_archivos_configuracion)
         
         self.menu = QMenuBar()
         self.menu_documento = self.menu.addMenu("Opciones")
@@ -83,8 +84,9 @@ class VContabilidadKWESTE(QMainWindow):
         # self.ui.actionObjetivos_Mensuales_PagosClientes.triggered.connect(self.ObjetivosPagoClientes)
         self.ui.actionFechaMovimiento.triggered.connect(self.FechaMovimiento)
         self.ui.actionCodigosCuentas.triggered.connect(self.CodigosCuentas)
-        # self.ui.actionDirecciones_de_envio.triggered.connect(self.direcciones_envio)
+        self.ui.actionDireccionesDeEnvio.triggered.connect(self.direcciones_envio)
         # self.ui.actionDepartamentos.triggered.connect(self.departamentos_vendedores)
+        
 
         # señales del hilo
         self.Hilo.signal.connect(self.mensajeTrabajoTerminado)
@@ -92,11 +94,13 @@ class VContabilidadKWESTE(QMainWindow):
         self.Hilo.signalNombreArchivo.connect(self.nombreArchivoTrabajando)
         self.Hilo.signalShowTrabajos.connect(self.Show_Data_Trabajos)
         self.Hilo.signalShowProcesados.connect(self.Show_Data_Procesado)
+        
 
         
         self.variables.actualizar_fecha_movimiento()
         self.Show_Data_Trabajos()
         self.Show_Data_Procesado()
+        
     
     def closeEvent(self, event):
         super().closeEvent(event)
@@ -109,15 +113,21 @@ class VContabilidadKWESTE(QMainWindow):
         
     def CodigosCuentas(self):
         self.v_CodigosCuentas = FuncionesBComprobacionContabilidad()
+        self.CREAR_JSON_CODIGOS_BCC.emit()
+        self.v_CodigosCuentas.MOSTRAR_DATOS_EXISTENTES.connect(self.v_CodigosCuentas.mostrar_datos_cuentas)
+        self.v_CodigosCuentas.MOSTRAR_DATOS_EXISTENTES.emit()
         self.v_CodigosCuentas.show()
 
+    def comprobar_existencia_archivos_configuracion(self):
+        creacion_json(self.variables.help_directory,self.variables.codigos_cuentas_balanza_comprobacion_contabilidad_kweste, None).comprobar_existencia
+        
     # def departamentos_vendedores(self):
     #     self.ventana_departamentos = Vendedores()
     #     self.ventana_departamentos.show()
 
-    # def direcciones_envio(self):
-    #     self.ventana_rutas = rutas()
-    #     self.ventana_rutas.show()
+    def direcciones_envio(self):
+        self.ventana_rutas = rutas()
+        self.ventana_rutas.show()
 
     # def ObjetivosPagoClientes(self):
     #     self.ventana_obj = ClassPrincipalObjPagos()
@@ -285,9 +295,6 @@ class VContabilidadKWESTE(QMainWindow):
         verticalHeader = self.ui.Tabla_Procesados.verticalHeader()
         verticalHeader.setStyleSheet("background-color: #4096d8; color:#FFFFFF;")
 
-
-    def comprobar_existencia_archivos_configuracion(self):
-        creacion_json(self.variables.help_directory,self.variables.codigos_cuentas_balanza_comprobacion_contabilidad_kweste, None).comprobar_existencia
     def Creacion_Carpetas(self):
         # Rutas de las carpetas que se deben verificar/crear
         rutas_a_verificar = [

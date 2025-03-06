@@ -117,7 +117,6 @@ class KenworthConnect():
         VentasPerdidas().venta_perdida_tuxtla2()
 # // CONTABILIDAD
     def BalanzaComprobacion(self):
-        try:
-            ContabilidadBalanzaComprobacionAnalisis()
-        except Exception as e:
-            print(e)
+        ContabilidadBalanzaComprobacionAnalisis()
+    
+            

@@ -825,6 +825,7 @@ border-top-right-radius: 10px;
     </widget>
     <addaction name="actionFechaMovimiento"/>
     <addaction name="menuBalanzaComprobacin"/>
+    <addaction name="actionDireccionesDeEnvio"/>
    </widget>
    <addaction name="menuOpciones"/>
   </widget>
@@ -836,6 +837,11 @@ border-top-right-radius: 10px;
   <action name="actionCodigosCuentas">
    <property name="text">
     <string>Codigos Cuentas</string>
+   </property>
+  </action>
+  <action name="actionDireccionesDeEnvio">
+   <property name="text">
+    <string>Direcciones de Envio</string>
    </property>
   </action>
  </widget>

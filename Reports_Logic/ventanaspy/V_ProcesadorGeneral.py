@@ -355,9 +355,12 @@ class Ui_V_ProcesadorGeneral(object):
         self.actionFechaMovimiento.setObjectName("actionFechaMovimiento")
         self.actionCodigosCuentas = QtGui.QAction(parent=V_ProcesadorGeneral)
         self.actionCodigosCuentas.setObjectName("actionCodigosCuentas")
+        self.actionDireccionesDeEnvio = QtGui.QAction(parent=V_ProcesadorGeneral)
+        self.actionDireccionesDeEnvio.setObjectName("actionDireccionesDeEnvio")
         self.menuBalanzaComprobacin.addAction(self.actionCodigosCuentas)
         self.menuOpciones.addAction(self.actionFechaMovimiento)
         self.menuOpciones.addAction(self.menuBalanzaComprobacin.menuAction())
+        self.menuOpciones.addAction(self.actionDireccionesDeEnvio)
         self.menuBar.addAction(self.menuOpciones.menuAction())
 
         self.retranslateUi(V_ProcesadorGeneral)
@@ -387,3 +390,4 @@ class Ui_V_ProcesadorGeneral(object):
         self.menuBalanzaComprobacin.setTitle(_translate("V_ProcesadorGeneral", "Balanza Comprobación"))
         self.actionFechaMovimiento.setText(_translate("V_ProcesadorGeneral", "Fecha Movimiento"))
         self.actionCodigosCuentas.setText(_translate("V_ProcesadorGeneral", "Codigos Cuentas"))
+        self.actionDireccionesDeEnvio.setText(_translate("V_ProcesadorGeneral", "Direcciones de Envio"))

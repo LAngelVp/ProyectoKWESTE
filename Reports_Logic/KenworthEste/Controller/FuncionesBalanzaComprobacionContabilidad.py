@@ -7,7 +7,7 @@ import os
 import json
 from PyQt6.QtGui import QIcon, QPixmap, QMouseEvent, QStandardItemModel, QStandardItem, QRegularExpressionValidator
 from PyQt6.QtWidgets import *
-from PyQt6.QtCore import QRegularExpression
+from PyQt6.QtCore import QRegularExpression, QThread, pyqtSignal
 from PyQt6 import *
 from ...globalModulesShare.resources import *
 from ...globalModulesShare.ContenedorVariables import Variables
@@ -17,6 +17,7 @@ from ...globalModulesShare.mensajes_alertas import *
 from ...globalModulesShare.icono import *
 
 class FuncionesBComprobacionContabilidad(QWidget):
+    MOSTRAR_DATOS_EXISTENTES = pyqtSignal()
     def __init__(self):
         super(FuncionesBComprobacionContabilidad, self).__init__()
         self.variables = Variables()
@@ -31,7 +32,7 @@ class FuncionesBComprobacionContabilidad(QWidget):
         self.ui.btn_btn_CargarExcel.clicked.connect(self.cargar_excel)
         self.ui.btn_btn_LimpiarCampos.clicked.connect(self.limpiar)
         self.ui.btn_btn_buscar.clicked.connect(self.buscar)
-        self.mostrar_datos_cuentas()
+        
         self.documento_json = creacion_json(self.variables.help_directory,self.variables.codigos_cuentas_balanza_comprobacion_contabilidad_kweste, None).comprobar_existencia
         
         #// VARIABLES GLOBALES
@@ -44,6 +45,9 @@ class FuncionesBComprobacionContabilidad(QWidget):
         regex = QRegularExpression(patron)
         validador = QRegularExpressionValidator(regex, self.ui.txt_numcuenta)
         self.ui.txt_numcuenta.setValidator(validador)
+        
+    
+        # self.mostrar_datos_cuentas()
         
     def buscar(self):
         print(self.ui.cajaopciones_busca_cuenta_codigo.currentIndex())
@@ -82,10 +86,11 @@ class FuncionesBComprobacionContabilidad(QWidget):
             creacion_json(self.variables.help_directory, self.variables.codigos_cuentas_balanza_comprobacion_contabilidad_kweste, objeto).agregar_json
             
         if self.excel is not None:
-            for fila in self.excel.values:
+            
+            for indice, fila in self.excel.iterrows():
                 objeto = {
-                    'Cuenta' : str(fila[0]),
-                    'Codigo' : str(fila[1])
+                    'Cuenta' : str(fila['Cuenta']),
+                    'Codigo' : str(fila['Codigo'])
                 }
                 creacion_json(self.variables.help_directory, self.variables.codigos_cuentas_balanza_comprobacion_contabilidad_kweste, objeto).agregar_json
         else:
